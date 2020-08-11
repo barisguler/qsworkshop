@@ -1,0 +1,2 @@
+1- Modularize to bits so it can be developed and tested in parallel/isolation
+2- Parametrize religously to fit into different custom needs, regions, AZs, etc

@@ -17,7 +17,7 @@
     },
     {
         "ParameterKey": "QSS3KeyPrefix",
-        "ParameterValue": "qsworkshop/"
+        "ParameterValue": "qs-workshop/"
     },
     {
         "ParameterKey": "QSS3BucketName",
