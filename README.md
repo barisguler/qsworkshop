@@ -48,3 +48,17 @@ git submodule update -r
 
 # Push the changes to the git repo
 git push origin develop
+
+# Get all parameters for master template 
+curl https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/templates/incomplete.master.template.yaml -o templates/master.template.yaml
+
+# Get example VPC stack details
+curl -s https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/templates/vpcstack.master.template.yaml >>templates/master.template.yaml
+
+# Get workload example - Elastic Load Balancer
+curl -s https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/templates/workload.template.yaml -o templates/workload.template.yaml
+
+# add and commit
+git add templates/workload.template.yaml
+git commit -a -m 'Added Workload'
+
