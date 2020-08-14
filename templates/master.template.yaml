@@ -2,19 +2,20 @@
 AWSTemplateFormatVersion: 2010-09-09
 
 Description:
-  This template creates the VPC and workload as nested stacks.
+  # This template creates the VPC and workload as nested stacks.
 
 Parameters:
-  set of parameters
+  # set of parameters
 
 Mappings:
-  set of mappings
+  # set of mappings
 
 Conditions:
-  set of conditions
+  # set of conditions
+  UsingDefaultBucket: !Equals [!Ref QSS3BucketName, 'aws-quickstart']
 
 Resources:
-  set of resources
+  # set of resources
 
 Outputs:
-  set of outputs
+  # set of outputs
