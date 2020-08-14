@@ -51,19 +51,24 @@ git push origin develop
 
 # Get all parameters for master template 
 curl https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/templates/incomplete.master.template.yaml -o templates/master.template.yaml
-
 # Get example VPC stack details
 curl -s https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/templates/vpcstack.master.template.yaml >>templates/master.template.yaml
+# Add and commit changes
+git add .
+git commit -a -m 'Add QuickStart VPC as a nested stack'
 
 # Get workload example - Elastic Load Balancer
 curl -s https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/templates/workload.template.yaml -o templates/workload.template.yaml
-
 # add and commit
 git add templates/workload.template.yaml
 git commit -a -m 'Added Workload'
 
 # Add the workload to the master template
 curl -s https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/templates/webserver.master.template.yaml >>templates/master.template.yaml
-
 # Commit changes
 git commit -a -m 'Add Workload as a nested stack'
+
+# Add outputs to the master template
+curl -s https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/templates/outputs.master.template.yaml >>templates/master.template.yaml
+# Commit changes
+git commit -a -m 'Add outputs to master template'
