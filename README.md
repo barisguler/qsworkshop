@@ -62,3 +62,8 @@ curl -s https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-lab
 git add templates/workload.template.yaml
 git commit -a -m 'Added Workload'
 
+# Add the workload to the master template
+curl -s https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/templates/webserver.master.template.yaml >>templates/master.template.yaml
+
+# Commit changes
+git commit -a -m 'Add Workload as a nested stack'
