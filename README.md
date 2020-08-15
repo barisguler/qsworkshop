@@ -72,3 +72,28 @@ git commit -a -m 'Add Workload as a nested stack'
 curl -s https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/templates/outputs.master.template.yaml >>templates/master.template.yaml
 # Commit changes
 git commit -a -m 'Add outputs to master template'
+
+
+# Testing with Taskcat
+TaskCat requires python3. Therefore, we will create a virtual environment with python3 as default interpreter before installing TaskCat.
+
+Run following commands, to create a virtual environment and use python3 as default interpreter for virtual environment.
+
+cd ~/environment/
+virtualenv -p /usr/bin/python36 vpy36
+source vpy36/bin/activate
+
+Run python --version, and you should see the output as below:
+
+(vpy36) Admin:~/environment $ python --version
+Python 3.6.x
+
+sudo pip install --upgrade pip
+sudo pip install taskcat
+sudo ln -s /usr/local/bin/pip /usr/bin/pip
+taskcat --version
+
+
+# Create the ./taskcat.yaml file
+curl -s https://raw.githubusercontent.com/aws-quickstart/quickstart-workshop-labs/master/implementing/.taskcat.yml >>.taskcat.yml 
+taskcat test run &> screen-logs.txt &
